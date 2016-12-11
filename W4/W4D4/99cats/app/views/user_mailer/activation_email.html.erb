@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to 99 Cats, <%= @user.username %></h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: <%= @user.username %>.<br/>
+    </p>
+    <p>
+      <% #fail %>
+      To login to the site, activate your email by visiting this link: <%= link_to "Activate", activate_user_url(@user) %>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
