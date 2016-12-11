@@ -4,27 +4,27 @@ class BooksController < ApplicationController
   end
 
   def new
-    @books = Book.new
+    @book = Book.new
   end
 
   def create
-    @books = Book.new(book_params)
+    @book = Book.new(book_params)
 
-    if @books.save
+    if @book.save
       redirect_to books_url
     else
-      render 'new'
+      flash.now[:errors] = @book.errors.full_messages
+      render :new
     end
   end
 
   def destroy
-    @books = Book.destroy(params[:id])
-
-    redirect_to @books
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to books_url
   end
 
   private
-
   def book_params
     params.require(:book).permit(:title, :author)
   end
