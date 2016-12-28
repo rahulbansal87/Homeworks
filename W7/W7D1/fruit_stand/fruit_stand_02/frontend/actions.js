@@ -4,7 +4,7 @@ export const CLEAR = "CLEAR";
 export const addOrange = () => ({
   type: ADD_FRUIT,
   fruit: "Orange"
-})
+});
 
 export const addApple = () => ({
   type: ADD_FRUIT,

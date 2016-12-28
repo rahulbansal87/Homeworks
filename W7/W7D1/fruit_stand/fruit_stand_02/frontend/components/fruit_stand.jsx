@@ -10,6 +10,6 @@ const FruitStand = ({fruits, addApple, addOrange, clearFruit}) => (
     <button onClick={addOrange}>Orange</button>
     <button onClick={clearFruit}>Clear</button>
   </div>
-)
+);
 
 export default FruitStand;

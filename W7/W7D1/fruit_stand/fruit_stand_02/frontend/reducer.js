@@ -2,7 +2,7 @@ import { ADD_FRUIT, CLEAR } from "./actions";
 
 const _defaultState = {
   fruits: []
-}
+};
 
 const reducer = (oldState = _defaultState, action) => {
   switch(action.type) {
@@ -18,6 +18,6 @@ const reducer = (oldState = _defaultState, action) => {
     default:
       return oldState;
   }
-}
+};
 
 export default reducer;
