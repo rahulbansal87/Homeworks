@@ -67,38 +67,10 @@
 	document.addEventListener('DOMContentLoaded', function () {
 	  var preloadedState = localStorage.state ? JSON.parse(localStorage.state) : {};
 	  var store = (0, _store2.default)(preloadedState);
-	  var newStore = applyMiddlewares(store, addLoggingToDispatch);
 	
 	  var root = document.getElementById('content');
-	  _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: newStore }), root);
+	  _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 	});
-	
-	var addLoggingToDispatch = function addLoggingToDispatch(store) {
-	  return function (next) {
-	    return function (action) {
-	      var local = store.dispatch;
-	      console.log('old state:', store.getState());
-	      console.log('action:', action);
-	      var result = local(action);
-	      console.log('new state:', store.getState());
-	      return result;
-	    };
-	  };
-	};
-	
-	var applyMiddlewares = function applyMiddlewares(store) {
-	  for (var _len = arguments.length, middlewares = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-	    middlewares[_key - 1] = arguments[_key];
-	  }
-	
-	  var dispatch = store.dispatch;
-	
-	  middlewares.forEach(function (middleware) {
-	    dispatch = middleware(store)(dispatch);
-	  });
-	
-	  return Object.assign({}, store, { dispatch: dispatch });
-	};
 
 /***/ },
 /* 1 */
@@ -21528,12 +21500,34 @@
 	var configureStore = function configureStore() {
 	  var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 	
-	  var store = (0, _redux.createStore)(_root_reducer2.default, preloadedState);
+	  var store = (0, _redux.createStore)(_root_reducer2.default, preloadedState, (0, _redux.applyMiddleware)(addLoggingToDispatch));
 	  store.subscribe(function () {
 	    localStorage.state = JSON.stringify(store.getState());
 	  });
 	  return store;
 	};
+	
+	var addLoggingToDispatch = function addLoggingToDispatch(store) {
+	  return function (next) {
+	    return function (action) {
+	      console.log('old state:', store.getState());
+	      console.log('action:', action);
+	      var result = next(action);
+	      console.log('new state:', store.getState());
+	      return result;
+	    };
+	  };
+	};
+	
+	// const applyMiddlewares = (store, ...middlewares) => {
+	//   let dispatch = store.dispatch;
+	//
+	//   middlewares.forEach(middleware => {
+	//     dispatch = middleware(store)(dispatch);
+	//   });
+	//
+	//   return Object.assign({}, store, { dispatch });
+	// };
 	
 	exports.default = configureStore;
 
