@@ -70,7 +70,20 @@
 	
 	  var root = document.getElementById('content');
 	  _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
+	
+	  store.dispatch = addLoggingToDispatch(store);
 	});
+	
+	var addLoggingToDispatch = function addLoggingToDispatch(store) {
+	  var local = store.dispatch;
+	  return function (action) {
+	    console.log('old state:', store.getState());
+	    console.log('action:', action);
+	    var result = local(action);
+	    console.log('new state:', store.getState());
+	    return result;
+	  };
+	};
 
 /***/ },
 /* 1 */

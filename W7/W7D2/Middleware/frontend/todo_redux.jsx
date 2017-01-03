@@ -4,6 +4,7 @@ import configureStore from './store/store';
 
 import Root from './components/root';
 
+
 document.addEventListener('DOMContentLoaded', () => {
   const preloadedState = localStorage.state ?
     JSON.parse(localStorage.state) : {};
@@ -11,4 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.getElementById('content');
   ReactDOM.render(<Root store={store} />, root);
+
+  store.dispatch = addLoggingToDispatch(store);
 });
+
+const addLoggingToDispatch = store => {
+  let local = store.dispatch;
+  return action => {
+    console.log('old state:', store.getState());
+    console.log('action:', action);
+    let result = local(action);
+    console.log('new state:', store.getState());
+    return result;
+  };
+};
