@@ -172,14 +172,24 @@
 	  return Rainbow;
 	}(_react2.default.Component);
 	
-	;
-	
 	Rainbow = (0, _reactRouter.withRouter)(Rainbow);
 	
 	var routes = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: Rainbow },
-	  '// your routes here'
+	  _react2.default.createElement(
+	    _reactRouter.Route,
+	    { path: 'red', component: _red2.default },
+	    _react2.default.createElement(_reactRouter.Route, { path: 'orange', component: _orange2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'yellow', component: _yellow2.default })
+	  ),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'green', component: _green2.default }),
+	  _react2.default.createElement(
+	    _reactRouter.Route,
+	    { path: 'blue', component: _blue2.default },
+	    _react2.default.createElement(_reactRouter.Route, { path: 'indigo', component: _indigo2.default })
+	  ),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'violet', component: _violet2.default })
 	);
 	
 	document.addEventListener("DOMContentLoaded", function () {
