@@ -25614,7 +25614,7 @@
 	  }, {
 	    key: 'resetRed',
 	    value: function resetRed() {
-	      // your code here
+	      this.props.router.push('/red');
 	    }
 	  }, {
 	    key: 'addOrange',
@@ -25773,7 +25773,7 @@
 	  }, {
 	    key: 'resetBlue',
 	    value: function resetBlue() {
-	      // your code here
+	      this.props.router.push('/blue');
 	    }
 	  }, {
 	    key: 'addIndigo',
