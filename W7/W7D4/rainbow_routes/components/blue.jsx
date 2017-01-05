@@ -25,8 +25,8 @@ class Blue extends React.Component {
   }
 
   addIndigo() {
-    // your code here
+    this.props.router.push('/blue/indigo');
   }
-};
+}
 
 export default withRouter(Blue);

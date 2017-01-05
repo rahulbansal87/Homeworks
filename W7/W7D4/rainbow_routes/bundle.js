@@ -150,22 +150,22 @@
 	  }, {
 	    key: 'addRed',
 	    value: function addRed() {
-	      // your code here
+	      this.props.router.push('/red');
 	    }
 	  }, {
 	    key: 'addGreen',
 	    value: function addGreen() {
-	      // your code here
+	      this.props.router.push('/green');
 	    }
 	  }, {
 	    key: 'addBlue',
 	    value: function addBlue() {
-	      // your code here
+	      this.props.router.push('/blue');
 	    }
 	  }, {
 	    key: 'addViolet',
 	    value: function addViolet() {
-	      // your code here
+	      this.props.router.push('/violet');
 	    }
 	  }]);
 	
@@ -25619,19 +25619,17 @@
 	  }, {
 	    key: 'addOrange',
 	    value: function addOrange() {
-	      // your code here
+	      this.props.router.push('/red/orange');
 	    }
 	  }, {
 	    key: 'addYellow',
 	    value: function addYellow() {
-	      // your code here
+	      this.props.router.push('/red/yellow');
 	    }
 	  }]);
 	
 	  return Red;
 	}(_react2.default.Component);
-	
-	;
 	
 	exports.default = (0, _reactRouter.withRouter)(Red);
 
@@ -25780,14 +25778,12 @@
 	  }, {
 	    key: 'addIndigo',
 	    value: function addIndigo() {
-	      // your code here
+	      this.props.router.push('/blue/indigo');
 	    }
 	  }]);
 	
 	  return Blue;
 	}(_react2.default.Component);
-	
-	;
 	
 	exports.default = (0, _reactRouter.withRouter)(Blue);
 

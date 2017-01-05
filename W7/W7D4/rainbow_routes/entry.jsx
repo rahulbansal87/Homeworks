@@ -38,19 +38,19 @@ class Rainbow extends React.Component {
   }
 
   addRed() {
-    // your code here
+    this.props.router.push('/red');
   }
 
   addGreen() {
-    // your code here
+    this.props.router.push('/green');
   }
 
   addBlue() {
-    // your code here
+    this.props.router.push('/blue');
   }
 
   addViolet() {
-    // your code here
+    this.props.router.push('/violet');
   }
 }
 
