@@ -39,4 +39,4 @@
 - [Day 1: Dollar Store Redux](W7/W7D1)
 - [Day 2: Middleware Homework](W7/W7D2)
 - [Day 3: Giphy Search](W7/W7D3)
-- [Day 4: Rainbow Routes]
+- [Day 4: Rainbow Routes](W7/W7D4)
