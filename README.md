@@ -19,13 +19,13 @@
 
 ### Week 4
 - [Day 1: Library Controller](W4/W4D1)
-- [Day 2: HTML Recipe Page (rlee0525@github.io)]
+- [Day 2: HTML Recipe Page] - rlee0525@github.io
 - [Day 3: Rails Authentication](W4/W4D3)
 - [Day 4: Helpers & Layouts & Partials](W4/W4D4)
 - [Day 5: Polymorphism & Concerns](W4/W4D5)
 
 ### Week 5
-- [Day 2: CSS Recipe Page (rlee0525@github.io)]
+- [Day 2: CSS Recipe Page] - rlee0525@github.io
 - [Day 3: Intro JavaScript Problems](W5/W5D3)
 - [Day 4: Callbacks and Function Calls](W5/W5D4)
 
